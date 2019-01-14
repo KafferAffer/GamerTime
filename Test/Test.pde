@@ -36,3 +36,10 @@ void draw(){
   
   
 }
+
+void keyPressed(){
+  dir(key);
+}
+void keyReleased(){
+  nodir(key);
+}

@@ -6,6 +6,9 @@ class Player{
   float r;
 
   color col;
+  
+  boolean left = false;
+  boolean right = false;
 
 
   Player(float x, float y, float r_) {
@@ -75,5 +78,37 @@ class Player{
 
     body.setAngularVelocity(random(-10, 10));
   }
+  void dir(pressed){
+    switch (pressed){
+      case 'a': left = true; 
+      break
+      case 'A': left = true; 
+      break
+      case 'd': right = true; 
+      break
+      case 'D': right = true; 
+      break
+    }
+  }
+  void nodir(leased){
+    switch (leased){
+      case 'a': left = false; 
+      break
+      case 'A': left = false; 
+      break
+      case 'd': right = false; 
+      break
+      case 'D': right = false; 
+      break
+    }
+  }
+    
+  }
+  
+  void applyForce(Vec2 force) {
+    Vec2 pos = body.getWorldCenter();
+    body.applyForce(force, pos);
+  }
+  
   
 }
