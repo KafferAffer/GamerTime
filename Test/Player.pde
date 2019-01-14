@@ -78,37 +78,34 @@ class Player{
 
     body.setAngularVelocity(random(-10, 10));
   }
-  void dir(pressed){
-    switch (pressed){
+  void dir(){
+    switch (key){
       case 'a': left = true; 
-      break
+      break;
       case 'A': left = true; 
-      break
+      break;
       case 'd': right = true; 
-      break
+      break;
       case 'D': right = true; 
-      break
+      break;
     }
   }
-  void nodir(leased){
-    switch (leased){
+  void nodir(){
+    switch (key){
       case 'a': left = false; 
-      break
+      break;
       case 'A': left = false; 
-      break
+      break;
       case 'd': right = false; 
-      break
+      break;
       case 'D': right = false; 
-      break
+      break;
     }
   }
-    
-  }
-  
-  void applyForce(Vec2 force) {
+ void applyForce(Vec2 force) {
     Vec2 pos = body.getWorldCenter();
     body.applyForce(force, pos);
-  }
-  
-  
+  }   
 }
+  
+  

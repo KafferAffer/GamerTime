@@ -1,5 +1,5 @@
 int gamestate = 0;
-
+Player p;
 import shiffman.box2d.*;
 import org.jbox2d.collision.shapes.*;
 import org.jbox2d.common.*;
@@ -27,8 +27,8 @@ void draw(){
 }
 
 void keyPressed(){
-  dir(key);
+  p.dir();
 }
 void keyReleased(){
-  nodir(key);
+  p.nodir();
 }
