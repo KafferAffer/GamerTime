@@ -41,10 +41,7 @@ class Obstacle {
     rectMode(CENTER);
     rect(x,y+scroll,w,h);
     
-    textAlign(CENTER);
-    textSize(32);
-    fill(0, 102, 153);
-    text("Start",width/2,500);
+    
   }
   
   boolean checkDeath() {

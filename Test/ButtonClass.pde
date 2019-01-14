@@ -17,5 +17,10 @@ class Button {
     rectMode(CENTER);
     fill(200,200,200);
     rect(width/2,500,200,100);
+    
+    textAlign(CENTER);
+    textSize(32);
+    fill(0, 102, 153);
+    text("Start",width/2,500);
   }
 }
