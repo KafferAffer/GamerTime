@@ -8,10 +8,16 @@ import shiffman.box2d.*;
 import org.jbox2d.collision.shapes.*;
 import org.jbox2d.common.*;
 import org.jbox2d.dynamics.*;
+import org.jbox2d.dynamics.joints.*;
+import org.jbox2d.collision.shapes.Shape;
+import org.jbox2d.dynamics.contacts.*;
+
 Player p;
 Box2DProcessing box2d;
+float f;
 
 ArrayList<Obstacle> obstacles = new ArrayList<Obstacle>();
+ArrayList<Particle> particles = new ArrayList<Particle>();
 Button start = new Button(new PVector(250, 500), new PVector(200, 100), "start");
 
 void setup() {
@@ -47,6 +53,7 @@ void mousePressed() {
     StartButton();
     break;
   case 1:
+    grapple();
     break;
   }
   

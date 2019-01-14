@@ -9,6 +9,8 @@ class Player{
   
   boolean left = false;
   boolean right = false;
+  boolean up = false;
+  boolean down = false;
   float x,y;
 
 
@@ -87,6 +89,14 @@ class Player{
       break;
       case 'D': right = true; 
       break;
+      case 'w': up = true; 
+      break;
+      case 'W': up = true; 
+      break;
+      case 's': down = true; 
+      break;
+      case 'S': down = true; 
+      break;
     }
   }
   void nodir(){
@@ -99,6 +109,14 @@ class Player{
       break;
       case 'D': right = false; 
       break;
+      case 'w': up = false; 
+      break;
+      case 'W': up = false; 
+      break;
+      case 's': down = false; 
+      break;
+      case 'S': down = false; 
+      break;
     }
   }
   void move(){
@@ -107,6 +125,24 @@ class Player{
     }
     if(right ==true){
       applyForce(new Vec2(300,0));
+    }
+    if(up ==true){
+      f=max(0,f-1);
+      float lx=particles.get(0).x;
+      float ly=particles.get(0).y+scroll;
+      particles.get(0).killBody();
+      particles.remove(0);
+      particles.add(new Particle(lx,ly,4));
+      Grab(particles.get(0).body,f*5);
+    }
+    if(down ==true){
+      f=max(0,f+1);
+      float lx=particles.get(0).x;
+      float ly=particles.get(0).y+scroll;
+      particles.get(0).killBody();
+      particles.remove(0);
+      particles.add(new Particle(lx,ly,4));
+      Grab(particles.get(0).body,f*5);
     }
   }
  void applyForce(Vec2 force) {
