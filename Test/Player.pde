@@ -13,6 +13,7 @@ class Player{
 
   Player(float x, float y, float r_) {
     r = r_;
+    col = color(255,120,120);
     // This function puts the Player in the Box2d world
     makeBody(x, y, r);
   }
@@ -42,6 +43,7 @@ class Player{
     translate(pos.x, pos.y+scroll);
     stroke(0);
     strokeWeight(1);
+    fill(col);
     ellipse(0, 0, r*2, r*2);
     // Let's add a line so we can see the rotation
     line(0, 0, r, 0);
