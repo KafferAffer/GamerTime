@@ -22,6 +22,8 @@ void update(){
       obstacles.remove(i);
     }
   }
+  p.display();
+  p.move();
 }
 
 void randomObs(){

@@ -2,14 +2,13 @@
 int gamestate = 1;
 float scroll;
 PVector Obstaclesize = new PVector(50,200);
-float ObstacleFreq = 1;
-Player p;
+float ObstacleFreq = 2.1;
 
 import shiffman.box2d.*;
 import org.jbox2d.collision.shapes.*;
 import org.jbox2d.common.*;
 import org.jbox2d.dynamics.*;
-
+Player p;
 Box2DProcessing box2d;
 
 ArrayList<Obstacle> obstacles = new ArrayList<Obstacle>();
