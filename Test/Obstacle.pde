@@ -45,10 +45,8 @@ class Obstacle {
   }
   
   boolean checkDeath() {
-    // Let's find the screen position of the particle
-    Vec2 pos = box2d.getBodyPixelCoord(b);
     // Is it off the bottom of the screen?
-    if (pos.y > height+w*h-scroll) {
+    if (y > height+h-scroll) {
       killBody();
       return true;
     }
@@ -57,6 +55,13 @@ class Obstacle {
   
   void killBody() {
     box2d.destroyBody(b);
+  }
+  
+  boolean checksides(float lx,float ly) {
+    if(lx<x+w/2&&x-w/2<lx&&ly<y+h/2+scroll&&scroll+y-h/2<ly){
+      return true;
+    }
+    return false;
   }
 
 }

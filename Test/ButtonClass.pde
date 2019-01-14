@@ -8,7 +8,7 @@ class Button {
     text = text_;
   }
   boolean click (){
-    if(mouseX<pos.x+size.x/2||pos.x-size.x/2<mouseX||mouseY<pos.y+size.y/2||pos.y-size.y/2<mouseY){
+    if(mouseX<pos.x+size.x/2&&pos.x-size.x/2<mouseX&&mouseY<pos.y+size.y/2&&pos.y-size.y/2<mouseY){
       return true;
     }
     return false;

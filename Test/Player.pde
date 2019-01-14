@@ -9,13 +9,16 @@ class Player{
   
   boolean left = false;
   boolean right = false;
+  float x,y;
 
 
-  Player(float x, float y, float r_) {
+  Player(float x_, float y_, float r_) {
     r = r_;
     col = color(183,183,0);
     // This function puts the Player in the Box2d world
-    makeBody(x, y, r);
+    x = x_;
+    y = y_;
+    makeBody(x_, y_, r);
   }
 
   // This function removes the Player from the box2d world
@@ -39,12 +42,13 @@ class Player{
     // We look at each body and get its screen position
     Vec2 pos = box2d.getBodyPixelCoord(body);
     // Get its angle of rotation
+    x=pos.x;
+    y=pos.y;
     pushMatrix();
-    translate(pos.x, pos.y+scroll);
     stroke(0);
     strokeWeight(1);
     fill(col);
-    ellipse(0, 0, r*2, r*2);
+    ellipse(x, y+scroll, r*2, r*2);
     // Let's add a line so we can see the rotation
     line(0, 0, r, 0);
     popMatrix();
@@ -106,7 +110,6 @@ class Player{
     }
   }
  void applyForce(Vec2 force) {
-   println("LOL");
     Vec2 pos = body.getWorldCenter();
     body.applyForce(force, pos);
   }   
