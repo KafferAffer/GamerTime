@@ -8,22 +8,22 @@ class Player{
   color col;
 
 
-  Particle(float x, float y, float r_) {
+  Player(float x, float y, float r_) {
     r = r_;
-    // This function puts the particle in the Box2d world
+    // This function puts the Player in the Box2d world
     makeBody(x, y, r);
     body.setUserData(this);
     col = color(175);
   }
 
-  // This function removes the particle from the box2d world
+  // This function removes the Player from the box2d world
   void killBody() {
     box2d.destroyBody(body);
   }
   
-  // Is the particle ready for deletion?
+  // Is the Player ready for deletion?
   boolean done() {
-    // Let's find the screen position of the particle
+    // Let's find the screen position of the Player
     Vec2 pos = box2d.getBodyPixelCoord(body);
     // Is it off the bottom of the screen?
     if (pos.y > height+r*2) {
@@ -50,7 +50,7 @@ class Player{
     popMatrix();
   }
   
-  // Here's our function that adds the particle to the Box2D world
+  // Here's our function that adds the Player to the Box2D world
   void makeBody(float x, float y, float r) {
     // Define a body
     BodyDef bd = new BodyDef();
