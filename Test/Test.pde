@@ -1,4 +1,5 @@
-int gamestate = 0;
+int gamestate = 1;
+float scroll;
 
 import shiffman.box2d.*;
 import org.jbox2d.collision.shapes.*;
@@ -7,10 +8,18 @@ import org.jbox2d.dynamics.*;
 
 Box2DProcessing box2d;
 
-ArrayList<Boundary> boundaries;
+ArrayList<Obstacle> obstacles = new ArrayList<Obstacle>();
 
 void setup(){
   size(500,800);
+  
+  // Initialize box2d physics and create the world
+  box2d = new Box2DProcessing(this);
+  box2d.createWorld();
+  // We are setting a custom gravity
+  box2d.setGravity(0, -10);
+  
+  SpilSetup();
 }
 
 void draw(){
