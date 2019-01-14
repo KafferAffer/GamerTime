@@ -1,5 +1,7 @@
 int gamestate = 1;
 float scroll;
+PVector Obstaclesize = new PVector(50,200);
+float ObstacleFreq = 1;
 
 import shiffman.box2d.*;
 import org.jbox2d.collision.shapes.*;

@@ -41,5 +41,20 @@ class Obstacle {
     rectMode(CENTER);
     rect(x,y+scroll,w,h);
   }
+  
+  boolean checkDeath() {
+    // Let's find the screen position of the particle
+    Vec2 pos = box2d.getBodyPixelCoord(b);
+    // Is it off the bottom of the screen?
+    if (pos.y > height+w*h-scroll) {
+      killBody();
+      return true;
+    }
+    return false;
+  }
+  
+  void killBody() {
+    box2d.destroyBody(b);
+  }
 
 }

@@ -1,3 +1,8 @@
 void SpilSetup(){
-  obstacles.add(new Obstacle(3*width/4,height-50,width/2-50,10));
+  for(int i = 0; i<height; i++){
+    float spawn = random(100);
+    if(spawn<ObstacleFreq){
+      obstacles.add(new Obstacle(random(width),i,random(Obstaclesize.x,Obstaclesize.y),random(Obstaclesize.x,Obstaclesize.y)));
+    }
+  }
 }
