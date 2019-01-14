@@ -13,10 +13,9 @@ class Player{
 
   Player(float x, float y, float r_) {
     r = r_;
+    col = color(255,120,120);
     // This function puts the Player in the Box2d world
     makeBody(x, y, r);
-    body.setUserData(this);
-    col = color(175);
   }
 
   // This function removes the Player from the box2d world
@@ -40,13 +39,11 @@ class Player{
     // We look at each body and get its screen position
     Vec2 pos = box2d.getBodyPixelCoord(body);
     // Get its angle of rotation
-    float a = body.getAngle();
     pushMatrix();
-    translate(pos.x, pos.y);
-    rotate(a);
-    fill(col);
+    translate(pos.x, pos.y+scroll);
     stroke(0);
     strokeWeight(1);
+    fill(col);
     ellipse(0, 0, r*2, r*2);
     // Let's add a line so we can see the rotation
     line(0, 0, r, 0);
@@ -75,8 +72,6 @@ class Player{
 
     // Attach fixture to body
     body.createFixture(fd);
-
-    body.setAngularVelocity(random(-10, 10));
   }
   void dir(){
     switch (key){
@@ -102,7 +97,16 @@ class Player{
       break;
     }
   }
+  void move(){
+    if(left ==true){
+      applyForce(new Vec2(-300,0));
+    }
+    if(right ==true){
+      applyForce(new Vec2(300,0));
+    }
+  }
  void applyForce(Vec2 force) {
+   println("LOL");
     Vec2 pos = body.getWorldCenter();
     body.applyForce(force, pos);
   }   
