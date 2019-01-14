@@ -1,5 +1,5 @@
 
-int gamestate = 0;
+int gamestate = 1;
 float scroll;
 PVector Obstaclesize = new PVector(50,200);
 float ObstacleFreq = 2.1;
@@ -22,8 +22,8 @@ void setup(){
   // We are setting a custom gravity
   box2d.setGravity(0, -10);
   
-  //SpilSetup();
-  Startsetup();
+  SpilSetup();
+  //Startsetup();
 }
 
 void draw(){
