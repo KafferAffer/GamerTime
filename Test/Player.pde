@@ -13,7 +13,7 @@ class Player{
 
   Player(float x, float y, float r_) {
     r = r_;
-    col = color(255,120,120);
+    col = color(183,183,0);
     // This function puts the Player in the Box2d world
     makeBody(x, y, r);
   }
