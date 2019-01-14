@@ -1,6 +1,10 @@
 void Start(){
   
 }
-void Button(){
-  
+
+void StartButton(){
+  if(start.click()){
+    SpilSetup();
+    gamestate=1;
+  }
 }
