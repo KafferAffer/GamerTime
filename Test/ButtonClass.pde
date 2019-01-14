@@ -16,11 +16,11 @@ class Button {
   void show(){
     rectMode(CENTER);
     fill(200,200,200);
-    rect(width/2,500,200,100);
+    rect(pos.x,pos.y,size.x,size.y);
     
     textAlign(CENTER);
     textSize(32);
     fill(0, 102, 153);
-    text("Start",width/2,500);
+    text(text,pos.x,pos.y);
   }
 }

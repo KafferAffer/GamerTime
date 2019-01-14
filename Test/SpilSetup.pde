@@ -13,9 +13,7 @@ void SpilSetup(){
 void Startsetup(){
   clear();
   background(144,192,107);
-  
-  
-  
+  start.show();
   textAlign(CENTER);
   textSize(32);
   fill(0, 102, 153);
