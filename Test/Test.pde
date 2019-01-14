@@ -1,6 +1,6 @@
 int gamestate = 0;
 void setup(){
-
+  size(500,800);
 }
 
 void draw(){
