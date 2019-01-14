@@ -1,13 +1,10 @@
-<<<<<<< HEAD
+
 int gamestate = 1;
 float scroll;
 PVector Obstaclesize = new PVector(50,200);
 float ObstacleFreq = 1;
-
-=======
-int gamestate = 0;
 Player p;
->>>>>>> Stash
+
 import shiffman.box2d.*;
 import org.jbox2d.collision.shapes.*;
 import org.jbox2d.common.*;
