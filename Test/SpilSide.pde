@@ -8,7 +8,8 @@ void Spil(){
 }
 
 void scroll(){
-  scroll++;
+  scroll += speed;
+  speed += 0.001;
 }
 
 void update(){
@@ -25,12 +26,12 @@ void update(){
     pa.display();
     Grab(particles.get(0).body,f*5);
   }
-  println(f);
+  updatePoint();
 }
 
 void randomObs(){
   float spawn = random(100);
-  if(spawn<ObstacleFreq){
+  if(spawn<ObstacleFreq*speed){
     float sizeX =  random(Obstaclesize.x,Obstaclesize.y);
     float sizeY =  random(Obstaclesize.x,Obstaclesize.y);
     obstacles.add(new Obstacle(random(width),-50-scroll-sizeY,sizeX,sizeY));

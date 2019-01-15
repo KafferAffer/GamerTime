@@ -1,8 +1,11 @@
 
 int gamestate = 0;
-float scroll;
+float scroll,speed=0.1;
 PVector Obstaclesize = new PVector(50, 150);
-float ObstacleFreq = 2.1;
+float ObstacleFreq = 1.5;
+boolean grapped = false;
+boolean pointed = false;
+float lx,ly;
 
 import shiffman.box2d.*;
 import org.jbox2d.collision.shapes.*;
@@ -21,13 +24,13 @@ ArrayList<Particle> particles = new ArrayList<Particle>();
 Button start = new Button(new PVector(250, 500), new PVector(200, 100), "start");
 
 void setup() {
-  size(500, 800);
+  size(1000, 800);
 
   // Initialize box2d physics and create the world
   box2d = new Box2DProcessing(this);
   box2d.createWorld();
   // We are setting a custom gravity
-  box2d.setGravity(0, -10);
+  box2d.setGravity(0, -50);
 
   //SpilSetup();
   Startsetup();

@@ -1,7 +1,6 @@
 void grapple(){
-  for(int i = 0; i<particles.size();i++){
-    particles.get(i).killBody();
-    particles.remove(i);
+  if(grapped){
+    removePoint();
   }
   float px = mouseX-p.x;
   float py = mouseY-p.y-scroll;
@@ -12,7 +11,9 @@ void grapple(){
   
   f = 0;
   int num = 0;
-  while(abs(num) < 90){
+  grapped = false;
+  pointed = false;
+  while(abs(num) < 1000){
     float lx = p.x+f*hi.x*5;
     float ly = p.y+scroll+f*hi.y*5;
     ellipse(lx,ly,5,5);
@@ -20,7 +21,8 @@ void grapple(){
       if(wall.checksides(lx,ly)){
         particles.add(new Particle(lx,ly,4));
         Grab(particles.get(0).body,f*5);
-        num = 90;
+        num = 1000;
+        grapped = true;
       }
     }
     f++;
@@ -119,4 +121,28 @@ void Grab(Body i,float dist){
          // Make the joint.  Note we aren't storing a reference to the joint ourselves anywhere!
          // We might need to someday, but for now it's ok
          DistanceJoint dj = (DistanceJoint) box2d.world.createJoint(djd);
+         grapped = true;
+}
+
+void updatePoint(){
+  if (particles.size()>0){pointed = true;}
+  if(pointed){
+    lx=particles.get(0).x;
+    ly=particles.get(0).y;
+    removePoint();
+    particles.add(new Particle(lx,ly+scroll,4));
+    if(f*5<dist(p.x,p.y,lx,ly)){
+      Grab(particles.get(0).body,f*5);
+    }
+  }
+  println(f*5);
+  println(dist(p.x,p.y,lx,ly));
+}
+
+void removePoint(){
+  for(int i = 0; i<particles.size();i++){
+    particles.get(i).killBody();
+    particles.remove(i);
+    pointed = false;
+  }
 }

@@ -121,28 +121,16 @@ class Player{
   }
   void move(){
     if(left ==true){
-      applyForce(new Vec2(-300,0));
+      applyForce(new Vec2(-50,0));
     }
     if(right ==true){
-      applyForce(new Vec2(300,0));
+      applyForce(new Vec2(50,0));
     }
     if(up ==true){
-      f=max(0,f-1);
-      float lx=particles.get(0).x;
-      float ly=particles.get(0).y+scroll;
-      particles.get(0).killBody();
-      particles.remove(0);
-      particles.add(new Particle(lx,ly,4));
-      Grab(particles.get(0).body,f*5);
+      f=max(0,f-0.2);
     }
     if(down ==true){
-      f=max(0,f+1);
-      float lx=particles.get(0).x;
-      float ly=particles.get(0).y+scroll;
-      particles.get(0).killBody();
-      particles.remove(0);
-      particles.add(new Particle(lx,ly,4));
-      Grab(particles.get(0).body,f*5);
+      f=max(0,f+0.2);
     }
   }
  void applyForce(Vec2 force) {
