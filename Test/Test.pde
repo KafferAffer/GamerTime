@@ -1,4 +1,3 @@
-
 int gamestate = 0;
 float scroll,speed=0.1;
 PVector Obstaclesize = new PVector(50, 150);
@@ -33,7 +32,7 @@ void setup() {
   box2d.setGravity(0, -50);
 
   //SpilSetup();
-  Startsetup();
+  startSetup();
   
   SpilSetup();
   //Startsetup();
@@ -50,14 +49,38 @@ void draw() {
   }
 }
 
+void killAll(){
+  println("kiling " + obstacles.size());
+  for(int i = obstacles.size()-1; i>0;i--){
+    //println(obstacles.size());
+    obstacles.get(i).killBody();
+    obstacles.remove(i);
+    
+  }
+  p.killBody();
+  removePoint();
+  gamestate = 0;
+  startSetup();
+  SpilSetup();
+  println("Position: " + width + "And height:  " + height);
+  Vec2 pos = box2d.getBodyPixelCoord(p.body);
+  println("Play Position: " + pos.x + "And height:  " + pos.y);
+  scroll = 0;
+  speed=0.1;
+}
+
 void mousePressed() {
   switch(gamestate) {
   case 0:
     StartButton();
     break;
   case 1:
-    grapple();
-    break;
+    if(mouseButton == LEFT){
+      grapple();    
+    }else{
+      removePoint();
+    }
+  break;
   }
   
 }

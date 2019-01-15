@@ -10,7 +10,7 @@ void SpilSetup(){
 
 
 
-void Startsetup(){
+void startSetup(){
   clear();
   background(144,192,107);
   start.show();

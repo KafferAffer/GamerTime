@@ -33,8 +33,8 @@ class Player{
     // Let's find the screen position of the Player
     Vec2 pos = box2d.getBodyPixelCoord(body);
     // Is it off the bottom of the screen?
-    if (pos.y > height+r*2) {
-      killBody();
+    if (pos.y+scroll > height+r*2) {
+      killAll();
       return true;
     }
     return false;

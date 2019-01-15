@@ -1,10 +1,13 @@
 void Spil(){
   clear();
   background(144,192,107);
+  Vec2 pos = box2d.getBodyPixelCoord(p.body);
+  println("WHY:  "+pos.y);
   box2d.step();
   scroll();
   update();
   randomObs();
+  p.done();
 }
 
 void scroll(){
