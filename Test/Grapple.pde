@@ -20,7 +20,6 @@ void grapple(){
     for(Obstacle wall: obstacles){
       if(wall.checksides(lx,ly)){
         particles.add(new Particle(lx,ly,4));
-        Grab(particles.get(0).body,f*5);
         num = 1000;
         grapped = true;
       }
