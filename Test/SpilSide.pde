@@ -9,7 +9,7 @@ void Spil(){
 
 void scroll(){
   scroll += speed;
-  speed += 0.001;
+  speed += 0.0001;
 }
 
 void update(){
