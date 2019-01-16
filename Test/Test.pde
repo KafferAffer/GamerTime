@@ -2,8 +2,7 @@ int gamestate = 0;
 float scroll,score,speed=0.1;
 PVector Obstaclesize = new PVector(10, 50);
 
-float ObstacleNorFreq = 1.5;
-float ObstacleFreq = ObstacleNorFreq;
+float ObstacleFreq = 1.5;
 boolean grapped = false;
 boolean pointed = false;
 float lx,ly;
@@ -63,7 +62,6 @@ void killAll(){
   removePoint();
   gamestate = 0;
   startSetup();
-  SpilSetup();
 }
 
 void mousePressed() {

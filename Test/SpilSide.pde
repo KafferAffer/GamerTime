@@ -5,22 +5,23 @@ void Spil(){
   println("WHY:  "+pos.y);
   box2d.step();
   scroll();
-  score += speed;
+  
   update();
   randomObs();
   p.done();
-  text("score:   "+score,20,20);
+  fill(0);
+  text("score:   "+int(score),20,20);
 }
 
 void scroll(){
-  if(p.y+scroll<200){
-    scroll += (200-p.y+scroll);
-    ObstacleFreq=ObstacleNorFreq+(200-p.y+scroll);
-  }else{
+  while(p.y<400-scroll){
     scroll += speed;
-    ObstacleFreq=ObstacleNorFreq;
+    randomObs();
+    score += speed;
   }
+  scroll += speed;
   speed += 0.0001;
+  score += speed;
 }
 
 void update(){
