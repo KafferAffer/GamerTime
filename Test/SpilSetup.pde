@@ -1,4 +1,6 @@
 void SpilSetup(){
+  scroll = 0;
+  speed=0.1;
   for(int i = 0; i<height; i++){
     float spawn = random(100);
     if(spawn<ObstacleFreq/2){

@@ -62,11 +62,6 @@ void killAll(){
   gamestate = 0;
   startSetup();
   SpilSetup();
-  println("Position: " + width + "And height:  " + height);
-  Vec2 pos = box2d.getBodyPixelCoord(p.body);
-  println("Play Position: " + pos.x + "And height:  " + pos.y);
-  scroll = 0;
-  speed=0.1;
 }
 
 void mousePressed() {
