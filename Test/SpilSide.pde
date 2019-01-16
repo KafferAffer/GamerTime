@@ -45,7 +45,7 @@ void update(){
 void randomObs(){
   float spawn = random(100);
   if(spawn<ObstacleFreq*speed){
-    float sizeX =  random(Obstaclesize.x,Obstaclesize.y);
+    float sizeX =  random(Obstaclesize.x*2,Obstaclesize.y*2);
     float sizeY =  random(Obstaclesize.x,Obstaclesize.y);
     obstacles.add(new Obstacle(random(width),-50-scroll-sizeY,sizeX,sizeY));
   }

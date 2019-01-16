@@ -130,7 +130,7 @@ void updatePoint(){
     ly=particles.get(0).y;
     removePoint();
     particles.add(new Particle(lx,ly+scroll,4));
-    if(f*5+0.1<dist(p.x,p.y,lx,ly)){
+    if(f*5+0.2<dist(p.x,p.y,lx,ly)){
       Grab(particles.get(0).body,f*5);
     }
   }
@@ -139,7 +139,7 @@ void updatePoint(){
 }
 
 void removePoint(){
-  for(int i = 0; i<particles.size();i++){
+  for(int i = particles.size()-1; i>-1;i--){
     particles.get(i).killBody();
     particles.remove(i);
     pointed = false;
