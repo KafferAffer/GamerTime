@@ -1,7 +1,9 @@
 int gamestate = 0;
-float scroll,speed=0.1;
+float scroll,score,speed=0.1;
 PVector Obstaclesize = new PVector(10, 50);
-float ObstacleFreq = 1.5;
+
+float ObstacleNorFreq = 1.5;
+float ObstacleFreq = ObstacleNorFreq;
 boolean grapped = false;
 boolean pointed = false;
 float lx,ly;
