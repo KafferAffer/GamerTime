@@ -10,7 +10,8 @@ void Spil(){
   randomObs();
   p.done();
   fill(0);
-  text("score:   "+int(score),20,20);
+  textAlign(LEFT);
+  text("score:   "+int(score),20,30);
 }
 
 void scroll(){
