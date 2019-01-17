@@ -1,5 +1,5 @@
 int gamestate = 0;
-float scroll,score,speed=0.1;
+float scroll,score,speed=100;
 PVector Obstaclesize = new PVector(10, 50);
 
 float ObstacleFreq = 1.5;
@@ -24,7 +24,7 @@ ArrayList<Particle> particles = new ArrayList<Particle>();
 Button start = new Button(new PVector(250, 500), new PVector(200, 100), "start");
 
 void setup() {
-  size(1000, 800);
+  size(2000, 1000);
 
   // Initialize box2d physics and create the world
   box2d = new Box2DProcessing(this);

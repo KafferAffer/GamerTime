@@ -17,11 +17,12 @@ void Spil(){
 void scroll(){
   while(p.y<400-scroll){
     scroll += speed;
+    speed = speed*1.0001;
     randomObs();
-    score += speed;
+    score += speed*2;
   }
   scroll += speed;
-  speed += 0.0001;
+  speed = speed * 1.0001;
   score += speed;
 }
 
