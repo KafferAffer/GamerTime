@@ -15,6 +15,7 @@ import org.jbox2d.dynamics.joints.*;
 import org.jbox2d.collision.shapes.Shape;
 import org.jbox2d.dynamics.contacts.*;
 
+PImage image = loadImage("/Helmet.png");
 Player p;
 Box2DProcessing box2d;
 float f;

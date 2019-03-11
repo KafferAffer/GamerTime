@@ -1,6 +1,6 @@
 
 class Player{
-  
+  PImage image;
   //Player body
   Body body;
   float r;
@@ -14,13 +14,16 @@ class Player{
   float x,y;
 
 
-  Player(float x_, float y_, float r_) {
+  Player(PImage image,float x_, float y_, float r_) {
     r = r_;
     col = color(183,183,0);
     // This function puts the Player in the Box2d world
     x = x_;
     y = y_;
     makeBody(x_, y_, r);
+    this.image = image;
+    
+    this.image.resize(int(x),int(y));
   }
 
   // This function removes the Player from the box2d world
@@ -54,6 +57,7 @@ class Player{
     // Let's add a line so we can see the rotation
     line(0, 0, r, 0);
     popMatrix();
+    image(image,x,y);
   }
   
   // Here's our function that adds the Player to the Box2D world
